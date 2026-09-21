@@ -1,4 +1,5 @@
 module.exports = {
+  agentRules: false,
   async headers() {
     return [
       {

@@ -1140,7 +1140,7 @@ export default function VideoConverter() {
   return (
     <div className="container">
       <div className="header">
-        <h1><span className="greeting-text">LT Advert video converter</span></h1>
+        <h1><span className="greeting-text">Video converter</span></h1>
       </div>
       
       {/* Upload area */}
