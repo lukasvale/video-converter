@@ -5,7 +5,6 @@ import { useEffect, useState, useRef } from 'react';
 export default function VideoConverter() {
   // State variables
   const [isFFmpegLoaded, setIsFFmpegLoaded] = useState(false);
-  const [greeting, setGreeting] = useState('');
   const [uploadedFiles, setUploadedFiles] = useState([]);
   const [isConverting, setIsConverting] = useState(false);
   const [convertedVideos, setConvertedVideos] = useState({});
@@ -28,6 +27,7 @@ export default function VideoConverter() {
   
   // Format options
   const availableFormats = [
+    { width: 288, height: 432, label: '288x432', aspectRatio: '2:3' },
     { width: 320, height: 160, label: '320x160', aspectRatio: '2:1' },
     { width: 480, height: 240, label: '480x240', aspectRatio: '2:1' },
     { width: 480, height: 270, label: '480x270', aspectRatio: '16:9' },
@@ -54,9 +54,6 @@ export default function VideoConverter() {
   
   // Initialize on component mount
   useEffect(() => {
-    // Set greeting
-    setGreeting(getGreeting());
-    
     // Set initial status message to show immediately
     setStatusMessage('Initializing converter...');
     setStatusType('info');
@@ -129,32 +126,6 @@ export default function VideoConverter() {
       });
     };
   }, []);
-  
-  // Generate greeting based on time of day
-  function getGreeting() {
-    const now = new Date();
-    const hour = now.getHours();
-    
-    // Fun emojis array - will keep their original colors
-    const funEmojis = ["❤️", "💖", "💕", "😊", "✨", "🌟", "💫", "🦋", "🌸", "🌺", "🌻", "🌈", "🥰", "😘", "💓", "💝", "🍀"];
-    const randomEmoji = funEmojis[Math.floor(Math.random() * funEmojis.length)];
-    
-    // Names selection
-    const names = ["LT Advert!"];
-    const randomName = names[Math.floor(Math.random() * names.length)];
-    
-    let greeting;
-    
-    if (hour >= 5 && hour < 12) {
-      greeting = "Labas rytas";
-    } else if (hour >= 12 && hour < 18) {
-      greeting = "Laba diena";
-    } else {
-      greeting = "Labas vakaras";
-    }
-    
-    return `<span class="greeting-text">${greeting}, ${randomName}</span> <span class="emoji">${randomEmoji}</span>`;
-  }
   
   // Handle file upload
   const handleFileUpload = async (e) => {
@@ -1169,7 +1140,7 @@ export default function VideoConverter() {
   return (
     <div className="container">
       <div className="header">
-        <h1 dangerouslySetInnerHTML={{ __html: greeting }}></h1>
+        <h1><span className="greeting-text">LT Advert video converter</span></h1>
       </div>
       
       {/* Upload area */}
