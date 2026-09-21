@@ -1,4 +1,4 @@
-# LT Advert Video Converter
+# Video Converter
 
 A browser-based tool that converts videos and images into MP4 files at fixed ad sizes. Everything runs client-side with [ffmpeg.wasm](https://github.com/ffmpegwasm/ffmpeg.wasm), so files are never uploaded to a server.
 
