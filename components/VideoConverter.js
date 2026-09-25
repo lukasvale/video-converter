@@ -44,7 +44,8 @@ export default function VideoConverter() {
     { width: 896, height: 448, label: '896x448', aspectRatio: '2:1' },
     { width: 960, height: 480, label: '960x480', aspectRatio: '2:1' },
     { width: 960, height: 576, label: '960x576', aspectRatio: '5:3' },
-    { width: 1900, height: 950, label: '1900x950', aspectRatio: '2:1' }
+    { width: 1900, height: 950, label: '1900x950', aspectRatio: '2:1' },
+    { width: 1080, height: 1920, label: '1080x1920', aspectRatio: '9:16' }
   ];
   
   // Option settings

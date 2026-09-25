@@ -34,6 +34,7 @@ A browser-based tool that converts videos and images into MP4 files at fixed ad 
 | 960x480 | 2:1 |
 | 960x576 | 5:3 |
 | 1900x950 | 2:1 |
+| 1080x1920 | 9:16 |
 
 Output is H.264 (baseline profile, level 3.0) at 25 fps with `+faststart`.
 
